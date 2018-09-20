@@ -1,0 +1,203 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.vijay</groupId>
+  <artifactId>SpringBootWithHibernate</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>SpringBootWithHibernate</name>
+
+  
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>java8</java.version>
+    <!-- <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target> -->
+  </properties>
+	
+		 
+<parent> 
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.1.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+  
+	
+  <dependencies>
+  	
+  	
+  	
+  	<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<!-- <exclusions> <exclusion> <groupId>org.springframework.boot</groupId> 
+				<artifactId>spring-boot-starter-tomcat</artifactId> </exclusion> </exclusions> -->
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-tomcat -->
+		  <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-tomcat</artifactId> 
+			</dependency>
+  	
+	
+		<!-- <dependency>
+ 
+			<groupId>org.springframework.boot</groupId>
+
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+
+
+		</dependency> -->
+	
+		<dependency>
+
+			<groupId>org.postgresql</groupId>
+
+			<artifactId>postgresql</artifactId>
+
+			<version>9.4-1206-jdbc42</version>
+
+		</dependency>
+
+		
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.8.2</version>
+</dependency>
+		
+		
+		<dependency>
+
+			<groupId>com.zaxxer</groupId>
+
+			<artifactId>HikariCP</artifactId>
+
+			<version>2.7.3</version>
+
+		</dependency>
+	
+  	
+  	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+   
+    <scope>test</scope>
+</dependency>
+  	
+  	<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-orm</artifactId>
+    
+</dependency>
+  	
+  	
+  	<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>5.0.4.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+
+			<artifactId>jackson-dataformat-xml</artifactId>
+
+			<version>2.9.5</version>
+
+		</dependency>
+
+
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+
+		<dependency>
+
+			<groupId>com.fasterxml.jackson.core</groupId>
+
+			<artifactId>jackson-annotations</artifactId>
+
+			<version>2.9.5</version>
+
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+
+		<dependency>
+
+			<groupId>com.fasterxml.jackson.core</groupId>
+
+			<artifactId>jackson-databind</artifactId>
+
+			<version>2.9.5</version>
+
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+
+		<dependency>
+
+			<groupId>com.fasterxml.jackson.core</groupId>
+
+			<artifactId>jackson-core</artifactId>
+
+			<version>2.9.5</version>
+
+		</dependency>
+
+  	
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+  
+  <!--Trying to enforce the project to be minimally built on java version. NOTE we can also specify the maven version
+  and the OS  -->
+  <build>
+    <plugins>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>1.2</version>
+        <executions>
+            <execution>
+            <id>enforce-versions</id>
+            <goals>
+                <goal>enforce</goal>
+            </goals>
+            <configuration>
+                <rules>
+                    <requireJavaVersion>
+                        <version>1.8</version>
+                    </requireJavaVersion>
+                </rules>
+            </configuration>
+            </execution>
+        </executions>
+        </plugin> 
+    
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.0.1.RELEASE</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+
+			</plugin>
+    </plugins>
+</build>
+  
+</project>
